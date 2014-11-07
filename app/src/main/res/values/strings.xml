@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Task01_Activity</string>
+    <string name="action_settings">Settings</string>
+    <!--Names of activities-->
+    <string name="main_activity">Main activity</string>
+    <string name="second_activity">Second activity</string>
+    <string name="dialog_activity">Dialog activity</string>
+    <!--Text for buttons-->
+    <string name="explicit_intent">Start activity by explicit intent</string>
+    <string name="implicit_intent">Start activity by implicit intent</string>
+    <string name="dialog_intent">Start dialog activity by explicit intent</string>
+    <string name="accept_name">Accept new name</string>
+    <string name="rename_btn">Rename this button</string>
+
+
+
+</resources>
