@@ -10,13 +10,13 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends LoggedActivity implements OnClickListener {
 
-    private final static String TAG = "Task01";
     Button explicitIntentBtn;
     Button impliciIntentBtn;
     Button dialogActivityBtn;
     Button forRenameBtn;
+
 
 
     /**
@@ -24,13 +24,12 @@ public class MainActivity extends Activity implements OnClickListener {
      */
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        setClassName("MainActivity");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         findViews();
         setListenersForBtns();
-
-        Log.d(TAG, "MainActivity: onCreate()");
     }
 
     private void findViews() {
@@ -80,17 +79,6 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event)  {
-        if (keyCode == KeyEvent.KEYCODE_BACK && event.getRepeatCount() == 0) {
-            Log.d(TAG, this.getLocalClassName() + " back button was clicked");
-            finish();
-            return true;
-        }
-
-        return super.onKeyDown(keyCode, event);
-    }
-
-    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (data == null) {
             return;
@@ -102,38 +90,14 @@ public class MainActivity extends Activity implements OnClickListener {
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.d(TAG, "MainActivity: onRestart()");
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putCharSequence("renameBtnText",forRenameBtn.getText());
     }
 
     @Override
-    protected void onStart() {
-        super.onStart();
-        Log.d(TAG, "MainActivity: onStart()");
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d(TAG, "MainActivity: onResume()");
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.d(TAG, "MainActivity: onPause()");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.d(TAG, "MainActivity: onStop()");
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.d(TAG, "MainActivity: onDestroy()");
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        forRenameBtn.setText(savedInstanceState.getCharSequence("renameBtnText"));
     }
 }

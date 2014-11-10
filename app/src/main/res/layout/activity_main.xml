@@ -5,28 +5,28 @@
     android:layout_height="fill_parent">
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="14sp"
         android:text="@string/explicit_intent"
         android:id="@+id/explicitBtn"></Button>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/implicit_intent"
         android:textSize="14sp"
         android:id="@+id/implicitBtn"></Button>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/dialog_intent"
         android:textSize="14sp"
         android:id="@+id/dialogBtn"></Button>
 
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/rename_btn"
         android:textSize="14sp"
